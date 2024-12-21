@@ -22,9 +22,7 @@ public class ComputerGraphQLController {
       return computerService.getComputerByProce(proce);
   }
     @MutationMapping
-    public ComputerDTO saveComputer(@Argument ComputerRequest computerRequest ) {
-        System.out.println(computerRequest.toString());
-        ComputerDTO computerDTO = new ComputerDTO(computerRequest.proce(),computerRequest.ram(),computerRequest.price(),computerRequest.hardDrive());
-        return computerService.saveComputer(computerDTO);
+    public ComputerDTO saveComputer(@Argument ComputerDTO computer ) {
+        return computerService.saveComputer(computer);
   }
 }
